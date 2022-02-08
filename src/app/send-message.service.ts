@@ -22,7 +22,7 @@ export class SendMessageService {
       subject: subject,
     };
     return this.http.post(
-      'https://my-portfolio-website-82420-default-rtdb.firebaseio.com/messages.json',
+      'https://my-portfolioo-website-824230-default-rtdb.firebaseio.com/messages.json',
       data
     );
   }
