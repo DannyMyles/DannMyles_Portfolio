@@ -9,7 +9,7 @@ export function Projects() {
       id="projects"
       eyebrow="Projects"
       title="Things I've shipped"
-      description="Live, production work — from a full ERP implementation to booking platforms serving real clients."
+      description="Real products, live in production, serving real businesses — not tutorial clones. From a full ERP rollout to booking platforms running real client operations."
     >
       <AnimatedGroup as="ul" className="grid gap-5 sm:grid-cols-2">
         {projects.map((project) => (

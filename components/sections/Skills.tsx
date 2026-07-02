@@ -9,7 +9,7 @@ export function Skills() {
       id="skills"
       eyebrow="Skills"
       title="Tools I reach for"
-      description="A working stack spanning modern frontend frameworks, backend services, and the databases and practices that hold production systems together."
+      description="Comfortable owning a feature from interface to database — four frontend frameworks, two backend runtimes, and the practices that keep production systems from falling over."
     >
       <AnimatedGroup as="ul" className="grid gap-8 sm:grid-cols-2">
         {skills.map(({ category, items }) => (
