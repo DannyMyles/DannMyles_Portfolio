@@ -16,7 +16,7 @@ export function ExperienceItem({ entry, isLast }: { entry: Experience; isLast: b
           </span>
         </div>
         <p className="mt-1 text-sm font-medium text-foreground/60">
-          {entry.company} · {entry.employmentType} · {entry.locationType}
+          {[entry.company, entry.employmentType, entry.locationType].filter(Boolean).join(" · ")}
         </p>
         <ul className="mt-4 space-y-2">
           {entry.bullets.map((bullet) => (

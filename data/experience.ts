@@ -72,9 +72,9 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "Software Engineer (Internship)",
+    role: "Software Engineer",
     company: "I&M Bank Ltd",
-    employmentType: "Internship",
+    employmentType: "",
     location: "Nairobi, Kenya",
     locationType: "Hybrid",
     startDate: "Sep 2022",
@@ -87,9 +87,9 @@ export const experience: Experience[] = [
     ],
   },
   {
-    role: "React Developer (Internship)",
+    role: "React Developer",
     company: "Plateaumed Limited",
-    employmentType: "Internship",
+    employmentType: "",
     location: "Lagos, Nigeria",
     locationType: "Remote",
     startDate: "Jun 2022",

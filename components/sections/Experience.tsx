@@ -9,7 +9,7 @@ export function Experience() {
       id="experience"
       eyebrow="Experience"
       title="Where I've worked"
-      description={`${experience.length} roles since 2022 — from React internships to owning ERPNext system customizations in production.`}
+      description={`${experience.length} roles since 2022 — from early React work to owning ERPNext system customizations in production.`}
     >
       <AnimatedGroup as="ul">
         {experience.map((entry, index) => (
