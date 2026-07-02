@@ -1,27 +1,30 @@
-# Portfolio 😃
+# Muhadi Dancun — Portfolio
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.1.
+Personal portfolio site built with [Next.js](https://nextjs.org) (App Router), TypeScript, Tailwind CSS, and Framer Motion.
 
-## Development server
+## Development
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+```bash
+npm install
+npm run dev
+```
 
-## Code scaffolding
+Open [http://localhost:3000](http://localhost:3000).
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Contact form
 
-## Build
+The contact form submits via [Web3Forms](https://web3forms.com). Copy `.env.local.example` to `.env.local` and set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` to your free access key (get one instantly at web3forms.com with just your email, no account needed). Without a key, the form shows a "not configured" message with a mailto fallback instead of submitting.
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+When deploying to Vercel, add the same env var in the project's Settings → Environment Variables.
 
-## Running unit tests
+## Content
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+All copy (profile, experience, projects, skills, education) lives in typed modules under [`data/`](./data) — edit those files to update site content, no JSX changes needed.
 
-## Running end-to-end tests
+## Build & deploy
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+```bash
+npm run build
+```
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+Deployed on [Vercel](https://vercel.com) — pushes to `master` deploy automatically once the project is linked.
