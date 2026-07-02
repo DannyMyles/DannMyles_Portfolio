@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { profile } from "@/data/profile";
 import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT } from "@/lib/constants";
 
-type Status = "idle" | "submitting" | "success" | "error" | "not-configured";
+type Status = "idle" | "submitting" | "success" | "error";
 
 const inputClass =
   "w-full rounded-lg border border-border bg-surface px-4 py-2.5 text-sm text-foreground placeholder:text-foreground/40 focus:border-accent focus:outline-2 focus:outline-offset-1 focus:outline-accent";
@@ -28,11 +28,6 @@ export function ContactForm() {
 
     if (!payload.name || !payload.email || !payload.message) {
       setStatus("error");
-      return;
-    }
-
-    if (!WEB3FORMS_ACCESS_KEY) {
-      setStatus("not-configured");
       return;
     }
 
@@ -112,15 +107,6 @@ export function ContactForm() {
         {status === "error" && (
           <p className="text-sm font-medium text-red-500">
             Something went wrong. Please fill in the required fields, or email me directly.
-          </p>
-        )}
-        {status === "not-configured" && (
-          <p className="text-sm font-medium text-red-500">
-            The contact form isn&apos;t wired up yet — please email me directly at{" "}
-            <a href={`mailto:${profile.email}`} className="underline">
-              {profile.email}
-            </a>
-            .
           </p>
         )}
       </div>

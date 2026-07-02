@@ -13,9 +13,7 @@ Open [http://localhost:3000](http://localhost:3000).
 
 ## Contact form
 
-The contact form submits via [Web3Forms](https://web3forms.com). Copy `.env.local.example` to `.env.local` and set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` to your free access key (get one instantly at web3forms.com with just your email, no account needed). Without a key, the form shows a "not configured" message with a mailto fallback instead of submitting.
-
-When deploying to Vercel, add the same env var in the project's Settings → Environment Variables.
+The contact form submits via [Web3Forms](https://web3forms.com), configured with the access key in [`lib/constants.ts`](./lib/constants.ts). Web3Forms access keys are meant to be used client-side (not secret), so it's fine to keep it in source. Get a new one at web3forms.com if it ever needs rotating.
 
 ## Content
 
