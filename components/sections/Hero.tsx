@@ -66,7 +66,7 @@ export function Hero() {
             width={208}
             height={208}
             priority
-            className="size-full object-cover"
+            className="size-full object-cover object-top"
           />
         </div>
       </motion.div>
