@@ -7,6 +7,7 @@ import { GA_ID, SITE_URL } from "@/lib/constants";
 import { ThemeProvider } from "@/components/layout/ThemeProvider";
 import { Nav } from "@/components/layout/Nav";
 import { Footer } from "@/components/layout/Footer";
+import { ScrollProgress } from "@/components/ui/ScrollProgress";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -30,9 +31,13 @@ export const metadata: Metadata = {
   description,
   keywords: [
     "Full-Stack Developer",
-    "React",
+    "ERPNext Developer",
+    "Frappe Developer",
+    "Python Developer",
+    "Node.js Developer",
+    "React Developer",
+    "Angular Developer",
     "Next.js",
-    "Node.js",
     "Nairobi",
     "Kenya",
     "ERPNext",
@@ -40,6 +45,7 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: profile.fullName, url: SITE_URL }],
   creator: profile.fullName,
+  alternates: { canonical: SITE_URL },
   robots: { index: true, follow: true },
   openGraph: {
     type: "website",
@@ -57,6 +63,37 @@ export const metadata: Metadata = {
   },
 };
 
+const personJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Person",
+  name: profile.fullName,
+  alternateName: profile.preferredName,
+  jobTitle: profile.title,
+  description: profile.summary,
+  url: SITE_URL,
+  image: `${SITE_URL}${profile.photo}`,
+  email: `mailto:${profile.email}`,
+  telephone: profile.phone,
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Nairobi",
+    addressCountry: "KE",
+  },
+  sameAs: [profile.socials.github, profile.socials.linkedin, profile.socials.twitter],
+  knowsAbout: [
+    "ERPNext",
+    "Frappe Framework",
+    "Python",
+    "Node.js",
+    "React.js",
+    "Angular",
+    "Next.js",
+    "TypeScript",
+    "MongoDB",
+    "MariaDB",
+  ],
+};
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -69,7 +106,12 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="flex min-h-full flex-col bg-background text-foreground">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }}
+        />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+          <ScrollProgress />
           <a
             href="#main"
             className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-100 focus:rounded-md focus:bg-accent focus:px-4 focus:py-2 focus:text-accent-foreground"

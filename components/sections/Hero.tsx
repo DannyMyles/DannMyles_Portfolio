@@ -5,6 +5,7 @@ import { motion, useReducedMotion } from "framer-motion";
 import { profile } from "@/data/profile";
 import { Button } from "@/components/ui/Button";
 import { SocialLinks } from "@/components/ui/SocialLinks";
+import { RotatingText } from "@/components/ui/RotatingText";
 import { fadeInUp, reducedMotionFade, staggerContainer, reducedMotionStagger } from "@/lib/motion";
 
 export function Hero() {
@@ -23,11 +24,20 @@ export function Hero() {
         variants={container}
         className="max-w-xl text-center md:text-left"
       >
+        <motion.div variants={item} className="mb-4 flex justify-center md:justify-start">
+          <span className="inline-flex items-center gap-2 rounded-full border border-border bg-surface px-3 py-1 text-xs font-medium text-foreground/70">
+            <span className="relative flex size-2">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-500 opacity-75" />
+              <span className="relative inline-flex size-2 rounded-full bg-emerald-500" />
+            </span>
+            Available for new opportunities
+          </span>
+        </motion.div>
         <motion.p
           variants={item}
           className="mb-4 font-mono text-sm font-medium tracking-wide text-accent"
         >
-          Hi, I&apos;m {profile.preferredName} — {profile.title}
+          Hi, I&apos;m {profile.preferredName} — <RotatingText words={profile.roles} />
         </motion.p>
         <motion.h1
           variants={item}

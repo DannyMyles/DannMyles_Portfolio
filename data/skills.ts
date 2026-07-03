@@ -3,18 +3,31 @@ export interface SkillCategory {
   items: string[];
 }
 
+export interface CoreSkill {
+  name: string;
+  note: string;
+}
+
+export const coreStack: CoreSkill[] = [
+  { name: "ERPNext / Frappe", note: "Business systems & ERP" },
+  { name: "Python", note: "Backend & automation" },
+  { name: "Node.js", note: "APIs & services" },
+  { name: "React.js", note: "Interfaces" },
+  { name: "Angular", note: "Enterprise frontends" },
+];
+
 export const skills: SkillCategory[] = [
   {
     category: "Frontend",
-    items: ["React.js", "Next.js", "Vue.js", "Angular", "TypeScript", "JavaScript", "HTML/CSS"],
+    items: ["React.js", "Angular", "Next.js", "Vue.js", "TypeScript", "JavaScript", "HTML/CSS"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express.js", "Python", "ERPNext/Frappe"],
+    items: ["Python", "ERPNext/Frappe", "Node.js", "Express.js"],
   },
   {
     category: "Databases",
-    items: ["MongoDB", "MySQL", "MariaDB", "PostgreSQL"],
+    items: ["MongoDB", "MariaDB", "MySQL", "PostgreSQL"],
   },
   {
     category: "Practices & Tools",
